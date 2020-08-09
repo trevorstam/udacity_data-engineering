@@ -36,7 +36,7 @@ create_tables_in_redshift = CreateTableOperator(
 
 stage_events_to_redshift = StageToRedshiftOperator(
     task_id='Stage_events',
-    dag=dag
+    dag=dag,
     redshift_conn_id = 'redshift',
     aws_conn_id = 'aws_credentials'
     table_name = 'staging_events',
@@ -49,7 +49,7 @@ stage_events_to_redshift = StageToRedshiftOperator(
 
 stage_songs_to_redshift = StageToRedshiftOperator(
     task_id='Stage_songs',
-    dag=dag
+    dag=dag,
     redshift_conn_id = 'redshift',
     aws_conn_id = 'aws_credentials'
     table_name = 'staging_songs',
